@@ -12,12 +12,12 @@ export default function CarList() {
     const [msgSnackbar, setMsgSnackbar] = useState("");
 
     const columns = [
-        { HeaderName: 'Brand', field: 'brand', sortable: true, filter:true},
-        { HeaderName: 'Model', field: 'model', sortable: true, filter:true},
-        { HeaderName: 'Fuel', field: 'fuel', sortable: true, filter:true},
-        { HeaderName: 'Year', field: 'year', sortable: true, filter:true},
-        { HeaderName: 'Color', field: 'color', sortable: true, filter:true},
-        { HeaderName: 'Price', field: 'price', sortable: true, filter:true},
+        { headerName: 'Brand', field: 'brand', sortable: true, filter:true},
+        { headerName: 'Model', field: 'model', sortable: true, filter:true},
+        { headerName: 'Fuel', field: 'fuel', sortable: true, filter:true},
+        { headerName: 'Year', field: 'year', sortable: true, filter:true},
+        { headerName: 'Color', field: 'color', sortable: true, filter:true},
+        { headerName: 'Price', field: 'price', sortable: true, filter:true},
         {cellRenderer: params => <EditCar updateCar={updateCar} params={params}/>, width: 120}];
        
     
@@ -98,8 +98,8 @@ export default function CarList() {
             <div className="ag-theme-material" style={{ width: 700, height: 500 }}>
                 <AgGridReact
                     rowData={cars}
-                    columnDefs={colDefs}
-                    pagination={true}
+                    columnDefs={columns}
+                    pagination={10}
                     paginationPageSize={10}
                 >
 
